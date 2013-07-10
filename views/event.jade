@@ -1,0 +1,90 @@
+extends layout
+
+block content
+  ul.nav.nav-tabs
+    each lng in lngs
+      - if (lng == i18n.lng())
+        li.active
+          a(href='/event?setLng='+lng)=t('app.'+lng)
+      - else
+        li
+          a(href='/event?setLng='+lng)=t('app.'+lng)
+  #container
+    form(method='post', action='')
+      .row
+        .span3
+          .control-group
+            label(for='ActivityName')=t('app.ActivityName')
+            .controls
+              input(type='text', name='activityname', id='ActivityName')
+          .control-group
+            label(for='ActivityBrief')=t('app.ActivityBrief')
+            .controls  
+              input(type='text', name='activitybrief', id='ActivityBrief')
+          .control-group
+            label(for='Location')=t('app.Location')
+            .controls
+              input(type='text', name='location', id='Location')
+        .span3
+          .control-group
+            label(for='EventID')=t('app.EventID')
+            .controls
+              input(type='text', name='eventid', id='EventID')
+          .control-group
+            label(for='StartDate')=t('app.StartDate')
+            .controls
+              input(type='text', name='startdate', id='StartDate')
+          .control-group
+            label(for='EndDate')=t('app.EndDate')
+            .controls
+              input(type='text', name='enddate', id='EndDate')
+      .row
+        .span6
+          .control-group
+            label=t('app.ActivityOrigin')
+            .controls
+              textarea(rows='6', name='activityorigin')
+          .control-group
+            label=t('app.ActivityCategory')
+            .controls
+              label.checkbox.inline
+                input(type='checkbox', class='activitycategory', value='展演')
+                展演
+              label.checkbox.inline
+                input(type='checkbox', class='activitycategory', value='國際性會議')
+                國際性會議
+              label.checkbox.inline
+                input(type='checkbox', class='activitycategory', value='學術性研討會')
+                學術性研討會
+              label.checkbox.inline
+                input(type='checkbox', class='activitycategory', value='開幕')
+                開幕
+              label.checkbox.inline
+                input(type='checkbox', class='activitycategory', value='婚喪喜慶')
+                婚喪喜慶
+          .control-group
+            label=t('app.PaperRecord')
+            .controls
+              label.checkbox.inline
+                input(type='checkbox', class='paperrecord', value='邀請函')
+                邀請函
+              label.checkbox.inline
+                input(type='checkbox', class='paperrecord', value='公文')
+                公文
+          .control-group
+            label=t('app.Description')
+            .controls
+              textarea(rows='6', name="description")
+          .control-group
+            label(for='PaperLink')=t('app.PaperLink')
+            .controls
+              input(type='text', name='paperlink', id='PaperLink')
+          .control-group
+            label(for='FileLink')=t('app.FileLink')
+            .controls
+              input(type='text', name='filelink', id='FileLink')
+          .form-actions
+            input(type='submit', class='btn btn-primary')
+            a(class='btn') 重設
+block scripts
+  script(type='text/javascript', src='/javascripts/event.js')

@@ -1,0 +1,57 @@
+extends layout
+
+block content
+  ul.nav.nav-tabs
+    each lng in lngs
+      - if (lng == i18n.lng())
+        li.active
+          a(href='/present?setLng='+lng)=t('app.'+lng)
+      - else
+        li
+          a(href='/present?setLng='+lng)=t('app.'+lng)
+  #container
+    form(method='post', action='')
+      .row
+        .span3
+          .control-group
+            label(for='PresentName')=t('app.PresentName')
+            .controls
+              input(type='text', name='presentname', id='PresentName')
+          .control-group
+            label(for='PresentSender')=t('app.PresentSender')
+            .controls  
+              input(type='text', name='presentsender', id='PresentSender')
+          .control-group
+            label(for='ReceiveDate')=t('app.ReceiveDate')
+            .controls
+              input(type='text', name='receivedate', id='ReceiveDate')
+        .span3
+          .control-group
+            label(for='PresentID')=t('app.PresentID')
+            .controls
+              input(type='text', name='presentid', id='PresentID')
+          .control-group
+            label(for='Country')=t('app.Country')
+            .controls
+              input(type='text', name='country', id='Country')
+          .control-group
+            label(for='Receiver')=t('app.Receiver')
+            .controls
+              input(type='text', name='receiver', id='Receiver')
+      .row
+        .span6
+          .control-group
+            label=t('app.Description')
+            .controls
+              textarea(rows='6', name="description")
+          .control-group
+            label(for='FileLink')=t('app.FileLink')
+            .controls
+              input(type='text', name='filelink', id='FileLink')
+          .control-group
+            label(for='ModelLink')=t('app.ModelLink')
+            .controls
+              input(type='text', name='modellink', id='ModelLink')
+          .form-actions
+            input(type='submit', class='btn btn-primary')
+            a(class='btn') 重設

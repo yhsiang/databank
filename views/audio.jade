@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  #container
+    form(method='post', action='')
+      .row
+        .span6
+          .control-group
+            label(for='RadioStation')=t('app.RadioStation')
+            .controls
+              input(type='text', name='radiostation', id='RadioStation')
+          .control-group
+            label(for='ProgramName')=t('app.ProgramName')
+            .controls  
+              input(type='text', name='programname', id='ProgramName')
+          .control-group
+            label(for='ProgramTopic')=t('app.ProgramTopic')
+            .controls
+              input(type='text', name='programtopic', id='ProgramTopic')
+          .control-group
+            label(for='Respondent')=t('app.Respondent')
+            .controls
+              input(type='text', name='respondent', id='Respondent')
+          .control-group
+            label(for='RadioLength')=t('app.RadioLength')
+            .controls
+              input(type='text', name='radiolength', id='RadioLength')
+          .control-group
+            label(for='RadioFulltext')=t('app.RadioFulltext')
+            .controls
+              input(type='text', name='radiofulltext', id='RadioFulltext')
+          .control-group
+            label(for='FileLink')=t('app.FileLink')
+            .controls
+              input(type='text', name='filelink', id='FileLink')
+          .form-actions
+            input(type='submit', class='btn btn-primary')
+            a(class='btn') 重設    

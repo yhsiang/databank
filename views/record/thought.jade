@@ -1,0 +1,38 @@
+form(method='post', action='')
+  .row
+    .span6
+      .control-group
+        label(for='VideoName')=t('app.VideoName')
+        .controls
+          input(type='text', name='videoname', id='VideoName')
+      .control-group
+        label(for='VideoID')=t('app.VideoID')
+        .controls  
+          input(type='text', name='videoid', id='VideoID')
+      .control-group
+        label(for='Speark')=t('app.Speaker')
+        .controls
+          input(type='text', name='speaker', id='Speaker')
+      .control-group
+        label(for='Location')=t('app.Location')
+        .controls
+          input(type='text', name='location', id='Location')
+      .control-group
+        label(for='VideoLength')=t('app.VideoLength')
+        .controls
+          input(type='text', name='videolength', id='VideoLength')
+      .control-group
+        label=t('app.PlayFulltext')
+        .controls
+          textarea(rows='6', name='playfulltext')
+      .control-group
+        label=t('app.TimeCode')
+        .controls
+          textarea(rows='6', name='playfulltext')
+      .control-group
+        label(for='FileLink')=t('app.FileLink')
+        .controls
+          input(type='text', name='filelink', id='FileLink')
+      .form-actions
+        input(type='submit', class='btn btn-primary')
+        a(class='btn') 重設

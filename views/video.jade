@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  #container
+    ul#videoTabs.nav.nav-tabs
+      li.active
+        a(data-toggle='tab', href='#origin') 原始母片
+      li
+        a(data-toggle='tab', href='#feature') 精選剪輯
+    .tab-content
+      #origin.tab-pane.active
+        include video/origin
+      #feature.tab-pane
+        include video/feature
+
+block scripts
+  script(type='text/javascript', src='/javascripts/video.js')

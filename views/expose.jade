@@ -1,0 +1,34 @@
+extends layout
+
+block content
+  #container
+    form(method='post', action='')
+      .row
+        .span6    
+          .control-group
+            label(for='MediaName')=t('app.MediaName')
+            .controls
+              input(type='text', name='medianame', id='MediaName')
+          .control-group
+            label(for='ExposeTitle')=t('app.ExposeTitle')
+            .controls  
+              input(type='text', name='exposetitle', id='ExposeTitle')
+          .control-group
+            label(for='ExposePeople')=t('app.ExposePeople')
+            .controls
+              input(type='text', name='exposepeople', id='ExposePeople')
+          .control-group
+            label(for='ExposeFulltext')=t('app.ExposeFulltext')
+            .controls
+              input(type='text', name='exposefulltext', id='ExposeFulltext')
+          .control-group
+            label(for='Respondent')=t('app.Respondent')
+            .controls
+              input(type='text', name='respondent', id='Respondent')
+          .control-group
+            label(for='FileLink')=t('app.FileLink')
+            .controls
+              input(type='text', name='filelink', id='FileLink')
+          .form-actions
+            input(type='submit', class='btn btn-primary')
+            a(class='btn') 重設

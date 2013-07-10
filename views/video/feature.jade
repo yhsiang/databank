@@ -1,0 +1,92 @@
+form(method='post', action='')
+  .row
+    .span3
+      .control-group
+        label(for='ActivityName')=t('app.ActivityName')
+        .controls
+          input(type='text', name='activityname', id='ActivityName')
+      .control-group
+        label(for='ActivityBrief')=t('app.ActivityBrief')
+        .controls  
+          input(type='text', name='activitybrief', id='ActivityBrief')
+      .control-group
+        label(for='Location')=t('app.Location')
+        .controls
+          input(type='text', name='location', id='Location')
+    .span3
+      .control-group
+        label(for='PhotoID')=t('app.VideoID')
+        .controls
+          input(type='text', name='photoid', id='PhotoID')
+      .control-group
+        label(for='StartDate')=t('app.StartDate')
+        .controls
+          input(type='text', name='startdate', id='StartDate')
+      .control-group
+        label(for='EndDate')=t('app.EndDate')
+        .controls
+          input(type='text', name='enddate', id='EndDate')
+      .control-group
+        label(for='VideoLength')=t('app.VideoLength')
+        .controls
+          input(type='text', name='length', id='VideoLength')
+  .row
+    .span6
+      .control-group
+        label=t('app.VideoCategory')
+        .controls
+          label.checkbox.inline
+            input(type='checkbox', class='videocategory', value='展演帶')
+            展演帶
+          label.checkbox.inline
+            input(type='checkbox', class='videocategory', value='採訪帶')
+            採訪帶
+          label.checkbox.inline
+            input(type='checkbox', class='videocategory', value='新聞帶')
+            新聞帶
+          label.checkbox.inline
+            input(type='checkbox', class='videocategory', value='新聞稿帶')
+            新聞稿帶
+          label.checkbox.inline
+            input(type='checkbox', class='videocategory', value='彩排帶')
+            彩排帶
+          label.checkbox.inline
+            input(type='checkbox', class='videocategory', value='活動帶')
+            活動帶
+          label.checkbox.inline
+            input(type='checkbox', class='videocategory', value='集中研修帶')
+            集中研修帶
+          label.checkbox.inline
+            input(type='checkbox', class='videocategory', value='空鏡')
+            空鏡
+      .control-group
+        label=t('app.Workgroup')
+        .controls
+          each workgroup in workgroups
+            label.checkbox.inline  
+              input(type='checkbox', class='workgroup', value=workgroup)
+              =workgroup
+      .control-group
+        label=t('app.Participant')
+        .controls
+          each participant in participants
+            - if (participant == '其他')
+              label.checkbox.inline 
+                input(type='checkbox', class='participant', id='other', value=participant)
+                =participant
+              input(type='text', id='inputother', class='participant')
+            - else
+              label.checkbox.inline
+                input(type='checkbox', class='participant', value=participant)
+                =participant
+      .control-group
+        label=t('app.TimeCode')
+        .controls
+          textarea(rows='6', name='timecode')
+      .control-group
+        label(for='FileLink')=t('app.FileLink')
+        .controls
+          input(type='text', name='filelink', id='FileLink')
+      .form-actions
+        input(type='submit', class='btn btn-primary')
+        a(class='btn') 重設

@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  #container
+    ul#videoTabs.nav.nav-tabs
+      li.active
+        a(data-toggle='tab', href='#thought') 心得
+      li
+        a(data-toggle='tab', href='#record') 紀錄片
+    .tab-content
+      #thought.tab-pane.active
+        include record/thought
+      #record.tab-pane
+        include record/record
+
+block scripts
+  script(type='text/javascript', src='/javascripts/record.js')
