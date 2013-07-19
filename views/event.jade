@@ -64,9 +64,20 @@ block content
                 input(type='checkbox', class='paperrecord', value='公文')
                 公文
           .control-group
-            label摘要描述
+            label摘要描述(中文)
             .controls
               textarea(rows='6', name="description")
+          .control-group
+            label摘要描述(英文)
+            .controls
+              textarea(rows='6', name="description")
+          .control-group.format
+            label摘要描述(日文)
+            .controls
+              textarea(rows='6', name="description")
+          .control-group
+            a.btn.addlng 新增語言
+          input(type='text', class='lng')
           .control-group
             label(for='PaperLink')紙本連結
             .controls

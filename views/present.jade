@@ -33,9 +33,20 @@ block content
       .row
         .span6
           .control-group
-            label摘要描述
+            label摘要描述(中文)
             .controls
               textarea(rows='6', name="description")
+          .control-group
+            label摘要描述(英文)
+            .controls
+              textarea(rows='6', name="description")
+          .control-group.format
+            label摘要描述(日文)
+            .controls
+              textarea(rows='6', name="description")
+          .control-group
+            a.btn.addlng 新增語言
+          input(type='text', class='lng')
           .control-group
             label(for='FileLink')平面檔案連結
             .controls
@@ -47,3 +58,5 @@ block content
           .form-actions
             input(type='submit', class='btn btn-primary')
             a(class='btn') 重設
+block scripts
+  script(type='text/javascript', src='/javascripts/present.js')

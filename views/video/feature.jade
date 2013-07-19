@@ -1,35 +1,10 @@
 form(method='post', action='')
   .row
-    .span3
+    .span6
       .control-group
-        label(for='ActivityName')活動名稱
-        .controls
-          input(type='text', name='activityname', id='ActivityName')
-      .control-group
-        label(for='ActivityBrief')活動簡稱
-        .controls  
-          input(type='text', name='activitybrief', id='ActivityBrief')
-      .control-group
-        label(for='Location')地點
-        .controls
-          input(type='text', name='location', id='Location')
-    .span3
-      .control-group
-        label(for='PhotoID')影片編號
+        label(for='PhotoID')母帶編號
         .controls
           input(type='text', name='photoid', id='PhotoID')
-      .control-group
-        label(for='StartDate')開始日期
-        .controls
-          input(type='text', name='startdate', id='StartDate')
-      .control-group
-        label(for='EndDate')結束日期
-        .controls
-          input(type='text', name='enddate', id='EndDate')
-      .control-group
-        label(for='VideoLength')影片長度
-        .controls
-          input(type='text', name='length', id='VideoLength')
   .row.format.timecode
     .span3
       .control-group

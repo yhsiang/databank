@@ -13,6 +13,10 @@ form(method='post', action='')
         label(for='Location')地點
         .controls
           input(type='text', name='location', id='Location')
+      .control-group
+        label(for='Address')地址
+        .controls
+          input(type='text', name='address', id='Address')
     .span3
       .control-group
         label(for='PhotoID')影片編號
@@ -39,13 +43,13 @@ form(method='post', action='')
             input(type='checkbox', class='videocategory', value='展演帶')
             展演帶
           label.checkbox.inline
-            input(type='checkbox', class='videocategory', value='採訪帶')
+            input(type='checkbox', class='videocategory video2', value='採訪帶')
             採訪帶
           label.checkbox.inline
-            input(type='checkbox', class='videocategory', value='新聞帶')
+            input(type='checkbox', class='videocategory video3', value='新聞帶')
             新聞帶
           label.checkbox.inline
-            input(type='checkbox', class='videocategory', value='新聞稿帶')
+            input(type='checkbox', class='videocategory video4', value='新聞稿帶')
             新聞稿帶
           label.checkbox.inline
             input(type='checkbox', class='videocategory', value='彩排帶')
@@ -59,6 +63,39 @@ form(method='post', action='')
           label.checkbox.inline
             input(type='checkbox', class='videocategory', value='空鏡')
             空鏡
+  .row.video2.extend
+    .span6
+      .control-group
+        label採訪人物
+        input(type='text')
+      .control-group
+        label採訪時間
+        input(type='text')
+      .control-group
+        label採訪內容
+        textarea
+  .row.video3.extend
+    .span6
+      .control-group
+        label錄製電視台
+        input(type='text')
+      .control-group
+        label錄製時間
+        input(type='text')
+      .control-group
+        label播出內容全文
+        textarea
+  .row.video4.extend
+    .span6
+      .control-group
+        label播出電視台
+        input(type='text')
+      .control-group
+        label播出時間
+        input(type='text')
+      .control-group
+        label播出內容全文
+        textarea
   .row.format.timecode
     .span3
       .control-group

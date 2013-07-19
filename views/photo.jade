@@ -34,6 +34,10 @@ block content
       .row
         .span6
           .control-group
+            label(for='Address')地址
+            .controls
+              input(type='text', name='address', id='Address')
+          .control-group
             label陣組勾選(可複選)
             .controls
               each workgroup in workgroups
