@@ -44,8 +44,8 @@ $(function() {
 	$('.reset').on('click', function (evt) {
 		$('form')[0].reset();
 	})
-	$('#inputother').hide();
-	$('#other').on('click', function() {
-		$('#inputother').toggle();
+	$('.inputother').hide();
+	$('.other').on('click', function (evt) {
+		$(this).parent().next().toggle();
 	})
 });

@@ -7,58 +7,65 @@ block content
       .row
         .span3
           .control-group
-            label(for='ActivityName')=t('app.ActivityName')
+            label(for='ActivityName')活動名稱
             .controls
               input(type='text', name='activityname', id='ActivityName')
           .control-group
-            label(for='ActivityBrief')=t('app.ActivityBrief')
+            label(for='ActivityBrief')活動簡稱
             .controls  
               input(type='text', name='activitybrief', id='ActivityBrief')
           .control-group
-            label(for='Location')=t('app.Location')
+            label(for='Location')地點
             .controls
               input(type='text', name='location', id='Location')
         .span3
           .control-group
-            label(for='PhotoID')=t('app.PhotoID')
+            label(for='PhotoID')照片編號
             .controls
               input(type='text', name='photoid', id='PhotoID')
           .control-group
-            label(for='StartDate')=t('app.StartDate')
+            label(for='StartDate')開始日期
             .controls
               input(type='text', name='startdate', id='StartDate')
           .control-group
-            label(for='EndDate')=t('app.EndDate')
+            label(for='EndDate')結束日期
             .controls
               input(type='text', name='enddate', id='EndDate')
       .row
         .span6
           .control-group
-            label=t('app.Workgroup')
+            label陣組勾選(可複選)
             .controls
               each workgroup in workgroups
                 label.checkbox.inline  
                   input(type='checkbox', class='workgroup', value=workgroup)
                   =workgroup
           .control-group
-            label=t('app.Participant')
+            label會議勾選(可複選)
+            .controls
+              each conf in confs
+                label.checkbox.inline
+                  input(type='checkbox', class='conference', value=conf)
+                  =conf
+          .control-group
+            label人物勾選(可複選)
             .controls
               each participant in participants
-                - if (participant == '其他')
+                - if (participant != '師父' && participant != '師母')
                   label.checkbox.inline 
-                    input(type='checkbox', class='participant', id='other', value=participant)
+                    input(type='checkbox', class='participant other', value=participant)
                     =participant
-                  input(type='text', id='inputother', class='participant')
+                  input(type='text', class='participant inputother')
                 - else
                   label.checkbox.inline
                     input(type='checkbox', class='participant', value=participant)
                     =participant
           .control-group
-            label=t('app.Description')
+            label摘要描述
             .controls
               textarea(rows='6', name='description')
           .control-group
-            label(for='FileLink')=t('app.FileLink')
+            label(for='FileLink')檔案連結
             .controls
               input(type='text', name='filelink', id='FileLink')
           .form-actions

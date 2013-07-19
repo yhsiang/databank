@@ -2,47 +2,52 @@ form(method='post', action='')
   .row
     .span6
       .control-group
-        label(for='VideoName')=t('app.VideoName')
+        label(for='VideoName')影片名稱
         .controls
           input(type='text', name='videoname', id='VideoName')
       .control-group
-        label(for='VideoID')=t('app.VideoID')
+        label(for='VideoID')影片編號
         .controls  
           input(type='text', name='videoid', id='VideoID')
       .control-group
-        label(for='VideoLength')=t('app.VideoLength')
+        label(for='VideoLength')影片長度
         .controls
           input(type='text', name='videolength', id='VideoLength')
       .control-group
-        label(for='Location')=t('app.Location')
+        label(for='Location')地點
         .controls
           input(type='text', name='location', id='Location')
+  .row.format.timecode
+    .span3
       .control-group
-        label=t('app.Workgroup')
+        label|TimeCode
+        .controls
+        input(type='text')
+    .span6
+      .control-group
+        label陣組勾選(可複選)
         .controls
           each workgroup in workgroups
             label.checkbox.inline  
               input(type='checkbox', class='workgroup', value=workgroup)
               =workgroup
       .control-group
-        label=t('app.Participant')
+        label人物勾選(可複選)
         .controls
           each participant in participants
-            - if (participant == '其他')
+            - if (participant != '師父' && participant != '師母')
               label.checkbox.inline 
-                input(type='checkbox', class='participant', id='other', value=participant)
+                input(type='checkbox', class='participant other', value=participant)
                 =participant
-              input(type='text', id='inputother', class='participant')
+              input(type='text', class='participant inputother')
             - else
               label.checkbox.inline
                 input(type='checkbox', class='participant', value=participant)
-                =participant  
+                =participant
+  .row
+    .span6
       .control-group
-        label=t('app.TimeCode')
-        .controls
-          textarea(rows='6', name='timecode')
-      .control-group
-        label(for='FileLink')=t('app.FileLink')
+        label(for='FileLink')檔案連結
         .controls
           input(type='text', name='filelink', id='FileLink')
       .form-actions
